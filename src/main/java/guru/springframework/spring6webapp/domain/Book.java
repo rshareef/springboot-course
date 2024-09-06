@@ -2,7 +2,6 @@ package guru.springframework.spring6webapp.domain;
 
 import jakarta.persistence.*;
 
-import java.util.Objects;
 import java.util.Set;
 
 // use jakarta persistence annotation
@@ -55,31 +54,5 @@ public class Book {
     }
     public void setIsbn(String isbn) {
         this.isbn = isbn;
-    }
-
-    // Overriding the default print method.
-    @Override
-    public String toString() {
-        return "Book{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", isbn='" + isbn + '\'' +
-                ", authors=" + authors +
-                '}';
-    }
-
-    // implementing equals and hashcode so Hibernate (object-relational mapping tool) can determine if two objects are the same object or not.
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Book book = (Book) o;
-        return Objects.equals(id, book.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hashCode(id);
     }
 }

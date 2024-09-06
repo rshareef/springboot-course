@@ -2,7 +2,6 @@ package guru.springframework.spring6webapp.domain;
 
 import jakarta.persistence.*;
 
-import java.util.Objects;
 import java.util.Set;
 
 // using Jakarta Persistence - this is what is telling JPA that 'Author' is going to be an entity (object that exists) persisted to the database
@@ -50,34 +49,5 @@ public class Author {
     }
     public void setLastName(String lastName) {
         this.lastName = lastName;
-    }
-
-    // Overriding the default print method.
-    @Override
-    public String toString() {
-        return "Author{" +
-                "id=" + id +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", books=" + books +
-                '}';
-    }
-
-    // Generated equals and hashcode() [to determine if entities are equal]
-    @Override
-    public boolean equals(Object o) {
-        // if the object which invoked the function is equal to the object o, return true (objects are equal)
-        if (this == o) return true;
-        // if o is null (and or) the objects are of two different classes, return false (objects are not equal)
-        if (o == null || getClass() != o.getClass()) return false;
-        // explicit typecasting 'o' object as an instance of the author class
-        // WHY?
-        Author author = (Author) o;
-        return Objects.equals(id, author.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hashCode(id);
     }
 }
