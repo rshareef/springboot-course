@@ -56,7 +56,7 @@ public class Author {
         this.lastName = lastName;
     }
 
-    // Overriding the default print method.
+    // Overriding the default print method with a custom one. This is just a nice thing to do for the entities!(shows name of entity, property and each value of the property).
     @Override
     public String toString() {
         return "Author{" +
